@@ -8,23 +8,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val number: Int = 1
-
-        for (number in  1..100) {
-            if (number % 3 == 0 && number % 5 == 0) {
-                println("FizzBuzz")
-                continue
+        for (number in 1..30) {
+            when {
+                number % 3 == 0 && number % 5 == 0 -> println("FizzBuzz")
+                number % 3 == 0 -> println("Fizz")
+                number % 5 == 0 -> println("Buzz")
+                else -> println(number)
             }
-            if (number % 3 == 0) {
-                println("Fizz")
-                continue
-            }
-            if (number % 5 == 0) {
-                println("Buzz")
-                continue
-            }
-
-            println(number)
         }
     }
 }
